@@ -11,13 +11,18 @@
           aria-label="menu"
           aria-expanded="false"
           data-target="navbar-menu"
+          @click="showMobileMenu = !showMobileMenu"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div class="navbar-menu" id="navbar-menu">
+      <div
+        class="navbar-menu"
+        id="navbar-menu"
+        v-bind:class="{ 'is-active': showMobileMenu }"
+      >
         <div class="navbar-end">
           <router-link to="/summer" class="navbar-item">Summer</router-link>
           <router-link to="/winter" class="navbar-item">Winter</router-link>
